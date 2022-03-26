@@ -1,5 +1,6 @@
 package com.padwan.test.controller;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +19,7 @@ public class HealthController {
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity health() {
+    public ResponseEntity health() throws JSONException {
         JSONObject json = new JSONObject();
         json.put("kenobi", "Hello there!");
         json.put("grievous", "general Kenobi!");
